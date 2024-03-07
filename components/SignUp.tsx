@@ -17,7 +17,7 @@ const SignUp = () => {
   const form = useForm<z.infer<typeof SignUpSchemaCheck>>({
     resolver: zodResolver(SignUpSchemaCheck),
     defaultValues: {
-      username: "",
+      nickname: "",
       email: "",
       phone: "",
       role: "",
@@ -40,14 +40,14 @@ const SignUp = () => {
   }
 
   const handleButtonClick = () => {
-    form.trigger(["phone", "email", "username", "role"]);
+    form.trigger(["phone", "email", "nickname", "role"]);
     const phoneState = form.getFieldState("phone");
     const emailState = form.getFieldState("email");
-    const usernameState = form.getFieldState("username");
+    const nicknameState = form.getFieldState("nickname");
     const roleState = form.getFieldState("role");
     if (!phoneState.isDirty || phoneState.invalid) return;
     if (!emailState.isDirty || emailState.invalid) return;
-    if (!usernameState.isDirty || usernameState.invalid) return;
+    if (!nicknameState.isDirty || nicknameState.invalid) return;
     if (!roleState.isDirty || roleState.invalid) return;
 
     setStep(1);
@@ -56,14 +56,14 @@ const SignUp = () => {
   return (
     <div className="w-[380px]">
       <CardHeader>
-        <CardTitle>회원가입</CardTitle>
-        <CardDescription>필수 정보를 입력해볼게요</CardDescription>
+        <CardTitle>계정 생성</CardTitle>
+        <CardDescription>필수 정보를 입력해주세요</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="relative space-y-3 overflow-x-hidden">
             <motion.div className={cn("space-y-3")} animate={{ translateX: `${step * -100}%` }} transition={{ ease: "easeInOut" }}>
-              <FormComponents control={form.control} name="username" label="이름" placeholder="홍길동" />
+              <FormComponents control={form.control} name="nickname" label="닉네임" placeholder="홍길동" />
               <FormComponents control={form.control} name="email" label="이메일" placeholder="hello@sparta-devcamp.com" />
               <FormComponents control={form.control} name="phone" label="연락처" placeholder="01000000000" />
               <FormComponents control={form.control} name="role" label="역할" placeholder="역할을 선택해주세요" />

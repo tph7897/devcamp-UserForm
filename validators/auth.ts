@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const SignUpSchemaCheck = z.object({
-  username: z.string().min(2, { message: "이름은 2글자 이상이어야 합니다." }).max(100, { message: "이름은 100글자 이하이어야 합니다." }),
+  nickname: z.string().min(2, { message: "닉네임은 2글자 이상이어야 합니다." }).max(8, { message: "닉네임은 8글자 이하이어야 합니다." }),
   email: z.string().email({ message: "올바른 이메일을 입력해주세요." }),
   phone: z
     .string()

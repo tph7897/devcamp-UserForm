@@ -8,7 +8,7 @@ import { Control, FieldValues, UseFormRegisterReturn } from "react-hook-form";
 interface FormFieldProps {
   control: Control<
     {
-      username: string;
+      nickname: string;
       role: string;
       email: string;
       password: string;
@@ -17,7 +17,7 @@ interface FormFieldProps {
     },
     any
   >;
-  name: "username" | "role" | "email" | "password" | "phone" | "confirmPassword";
+  name: "nickname" | "role" | "email" | "password" | "phone" | "confirmPassword";
   label: string;
   placeholder?: string;
   type?: string;
@@ -35,7 +35,7 @@ const FormComponents: React.FC<FormFieldProps> = ({ control, name, label, placeh
             <Select onValueChange={field.onChange} defaultValue={field.value}>
               <FormControl>
                 <SelectTrigger>
-                  <SelectValue placeholder="placeholder" />
+                  <SelectValue placeholder={placeholder} />
                 </SelectTrigger>
               </FormControl>
               <SelectContent>
