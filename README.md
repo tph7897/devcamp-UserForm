@@ -1,6 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
+## 시작하기
 
 First, run the development server:
 
@@ -20,17 +18,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## 기술 스텍
 
-To learn more about Next.js, take a look at the following resources:
+이 프로젝트에는 다음과 같은 기술과 라이브러리가 사용됩니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **React**: 사용자 인터페이스를 만들기 위한 JavaScript 라이브러리입니다.
+2. **TypeScript**: 자바스크립트(JavaScript)를 기반으로 정적 타입 문법을 추가한 프로그래밍 언어입니다.
+3. **react-hook-form**: React 응용 프로그램에서 양식 상태 및 유효성 검사를 관리하기 위한 라이브러리입니다.
+4. **zod**: TypeScript-first 스키마 선언 및 유효성 검사 라이브러리입니다.
+5. **framer-motion**: React 응용 프로그램에서 애니메이션과 전환을 만드는 라이브러리입니다.
+6. **shadcn/ui**:웹 개발을 위한 오픈 소스 UI 컴포넌트 라이브러리입니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 사이트 주소
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://devcamp-user-form.vercel.app/
