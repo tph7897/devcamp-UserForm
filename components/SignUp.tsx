@@ -3,13 +3,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Form } from "./ui/form";
 import { motion } from "framer-motion";
-import FormComponents from "./FormComponents";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import { SignUpSchemaCheck } from "@/validators/auth";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useToast } from "./ui/use-toast";
+import SignUpFormComponents from "./SignUpFormComponents";
 
 const SignUp = () => {
   const [step, setStep] = useState<number>(0);
@@ -63,10 +63,10 @@ const SignUp = () => {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="relative space-y-3 overflow-x-hidden">
             <motion.div className={cn("space-y-3")} animate={{ translateX: `${step * -100}%` }} transition={{ ease: "easeInOut" }}>
-              <FormComponents control={form.control} name="nickname" label="닉네임" placeholder="홍길동" />
-              <FormComponents control={form.control} name="email" label="이메일" placeholder="hello@sparta-devcamp.com" />
-              <FormComponents control={form.control} name="phone" label="연락처" placeholder="01000000000" />
-              <FormComponents control={form.control} name="role" label="역할" placeholder="역할을 선택해주세요" />
+              <SignUpFormComponents control={form.control} name="nickname" label="닉네임" placeholder="홍길동" />
+              <SignUpFormComponents control={form.control} name="email" label="이메일" placeholder="hello@sparta-devcamp.com" />
+              <SignUpFormComponents control={form.control} name="phone" label="연락처" placeholder="01000000000" />
+              <SignUpFormComponents control={form.control} name="role" label="역할" placeholder="역할을 선택해주세요" />
             </motion.div>
             <motion.div
               className={cn("space-y-3 absolute top-0 left-0 right-0")}
@@ -75,8 +75,8 @@ const SignUp = () => {
                 ease: "easeInOut",
               }}
             >
-              <FormComponents control={form.control} name="password" label="비밀번호" type="password" />
-              <FormComponents control={form.control} name="confirmPassword" label="비밀번호 확인" type="password" />
+              <SignUpFormComponents control={form.control} name="password" label="비밀번호" type="password" />
+              <SignUpFormComponents control={form.control} name="confirmPassword" label="비밀번호 확인" type="password" />
             </motion.div>
             <Button type="button" className={cn({ hidden: step === 1 })} onClick={handleButtonClick}>
               다음 단계로 ⭢
